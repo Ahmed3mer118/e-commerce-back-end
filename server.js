@@ -12,6 +12,7 @@ const path = require('path');
 const corsMiddlewate = require('./middleware/cors.mddleware');
 app.use(corsMiddlewate);
 require("./services/autoBackup.service")
+
 app.use(express.json())
 connectDB()
 
@@ -23,6 +24,8 @@ app.use("/api/brand", require("./router/brandRouter"))
 app.use("/api/subcategories", require("./router/subcategoryRouter"))
 app.use("/api/cart", require("./router/cartRouter"))
 app.use("/api/orders", require("./router/ordersRouter"))
+// app.use("/api/reports/sales",require("./controllers/reports.controller"))
+
 
 
 

@@ -1,4 +1,4 @@
-const Brand  = require("../models/brand.model")
+const Brand = require("../models/brand.model")
 
 exports.getBrand = async (req, res) => {
     const brand = await Brand.find()
@@ -6,18 +6,26 @@ exports.getBrand = async (req, res) => {
         return res.status(404).json({ error: "Brand not found. Please provide a title." });
     }
 
-    return res.status(200).json({ message: "Brand found successfully." ,brand});
+    return res.status(200).json({ message: "Brand found successfully.", brand });
 }
+exports.getBrandById = async (req, res) => {
+    const { id } = req.body
+    if (!id) {
+        return res.status(404).json({ error: "Brand not found. Please provide a title." });
+    }
+    const brandId = await Brand.findById(id)
+    return res.status(200).json({ message: "Brand found successfully.", brandId });
 
+}
 exports.addBrand = async (req, res) => {
     const { brand_name, isActive } = req.body;
 
-    if (!brand_name ) {
+    if (!brand_name) {
         return res.status(400).json({ error: "Brand_name is required." });
     }
-    const newBrand = await Brand.create({brand_name, isActive})
+    const newBrand = await Brand.create({ brand_name, isActive })
 
-    return res.status(201).json({ message: "Brand created successfully.", data : newBrand });
+    return res.status(201).json({ message: "Brand created successfully.", data: newBrand });
 }
 exports.updateBrand = async (req, res) => {
     const { brand_name } = req.body;

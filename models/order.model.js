@@ -38,8 +38,10 @@ const OrderSchema = mongoose.Schema({
         type: String,
         enum: ['Cash', 'CreditCard', 'Instapay'],
         default: 'Cash'
+    },
+    orderNumber:{
+        type:Number
     }
-
 }, {
     timestamps: true
 })

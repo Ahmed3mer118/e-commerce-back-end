@@ -5,11 +5,19 @@ exports.getSubcategory = async (req, res) => {
         return res.status(404).json({ error: "Subcategories not found." });
     }
 
-    return res.status(200).json({ message: "Subcategory found successfully." , subcategoies });
+    return res.status(200).json({ message: "Subcategory found successfully.", subcategoies });
+}
+exports.getSubcategoryById = async (req, res) => {
+    const { id } = req.body
+    if (!id) {
+        return res.status(404).json({ error: "Brand not found. Please provide a title." });
+    }
+    const subcategoryId = await Subcategory.findById(id)
+    return res.status(200).json({ message: "Brand found successfully.", subcategoryId });
 }
 exports.addSubcategory = async (req, res) => {
     const { subcategory_name, isActive } = req.body;
-    if (!subcategory_name ) {
+    if (!subcategory_name) {
         return res.status(400).json({ error: "subcategory_name and subcategory_data are required." });
     }
     const newSubcategory = await Subcategory.create({

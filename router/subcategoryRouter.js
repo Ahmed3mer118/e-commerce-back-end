@@ -3,6 +3,7 @@ const router = express.Router();
 const subcategory = require("../controllers/subcategoryControllers")
 
 router.get("/",subcategory.getSubcategory );
+router.get("/:id", subcategory.getSubcategoryById);
 router.post("/",subcategory.addSubcategory);
 router.put("/:id",subcategory.updateSubcategory);
 router.delete("/:id",subcategory.deleteSubcategory);

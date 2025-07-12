@@ -60,7 +60,7 @@ exports.login = async (req, res) => {
         }
         const user = await User.findOne({ $or: [{ email }, { phone_number: phoneNumber }] });
         if (!user) {
-            return res.status(404).json({ error: "User not found." });
+            return res.status(404).json({ error: "Invalid Email or password." });
         }
         const isPasswordVaild = await bcrypt.compare(password, user.password)
         if (!isPasswordVaild) {

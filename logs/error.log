@@ -1,74 +1,51 @@
-Timestamp : 2025/07/03 15:07:87;
+Timestamp : 2025/07/08 12:07:44;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :undefined ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:90;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :undefined ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:97;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :undefined ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:65;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt" (type string) at path "_id" for model "Product" ; data :[object Object] ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:34;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :[object Object] ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:30;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :[object Object] ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:74;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :[object Object] ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:73;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :[object Object] ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:87;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :[object Object] ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:63;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :[object Object] ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:05;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :[object Object] ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:22;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :undefined ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:88;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :[object Object] ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:10;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :[object Object] ;
+ Stack :   
+Timestamp : 2025/07/08 12:07:93;
+            Level : ERROR ; Message : Admin failed to retrieve  product error :CastError: Cast to ObjectId failed for value "t-shirt-app" (type string) at path "_id" for model "Product" ; data :undefined ;
+ Stack :   
+Timestamp : 2025/07/09 12:07:25;
             Level : ERROR ; Message : Admin failed to create new product ;
- Stack :  TypeError: Cannot read properties of undefined (reading 'filename')
-    at exports.addProduct (H:\NTI\project\E-commerce\back-end\controllers\productControllers.js:44:32)
-    at Layer.handleRequest (H:\NTI\project\E-commerce\back-end\node_modules\router\lib\layer.js:152:17)
-    at next (H:\NTI\project\E-commerce\back-end\node_modules\router\lib\route.js:157:13)
-    at multerMiddleware (H:\NTI\project\E-commerce\back-end\node_modules\multer\lib\make-middleware.js:19:41)
-    at Layer.handleRequest (H:\NTI\project\E-commerce\back-end\node_modules\router\lib\layer.js:152:17)
-    at next (H:\NTI\project\E-commerce\back-end\node_modules\router\lib\route.js:157:13)
-    at H:\NTI\project\E-commerce\back-end\middleware\role.middleware.js:6:9
-    at Layer.handleRequest (H:\NTI\project\E-commerce\back-end\node_modules\router\lib\layer.js:152:17)
-    at next (H:\NTI\project\E-commerce\back-end\node_modules\router\lib\route.js:157:13)
-    at exports.authenticate (H:\NTI\project\E-commerce\back-end\middleware\auth.middleware.js:18:9) 
-Timestamp : 2025/07/03 15:07:24;
-            Level : ERROR ; Message : Admin failed to create new product ;
- Stack :  ValidationError: Product validation failed: product_title: Path `product_title` is required., product_image: Path `product_image` is required.
-    at Document.invalidate (H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3352:32)
-    at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3113:17
-    at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\schemaType.js:1407:9
-    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) 
-Timestamp : 2025/07/03 15:07:98;
-            Level : ERROR ; Message : Admin failed to create new product ;
- Stack :  ValidationError: Product validation failed: product_title: Path `product_title` is required., product_image: Path `product_image` is required.
-    at Document.invalidate (H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3352:32)
-    at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3113:17
-    at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\schemaType.js:1407:9
-    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) 
-Timestamp : 2025/07/03 15:07:25;
-            Level : ERROR ; Message : Admin failed to create new product ;
- Stack :  ValidationError: Product validation failed: product_image: Path `product_image` is required., category_name: `men` is not a valid enum value for path `category_name`.
-    at Document.invalidate (H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3352:32)
-    at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3113:17
-    at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\schemaType.js:1407:9
-    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) 
-Timestamp : 2025/07/03 15:07:08;
-            Level : ERROR ; Message : Admin failed to create new product ;
- Stack :  ValidationError: Product validation failed: product_image: Path `product_image` is required., category_name: `men` is not a valid enum value for path `category_name`.
-    at Document.invalidate (H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3352:32)
-    at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3113:17
-    at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\schemaType.js:1407:9
-    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) 
-Timestamp : 2025/07/03 15:07:44;
-            Level : ERROR ; Message : Admin failed to create new product ;
- Stack :  ValidationError: Product validation failed: product_image: Path `product_image` is required., category_name: `men` is not a valid enum value for path `category_name`.
-    at Document.invalidate (H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3352:32)
-    at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3113:17
-    at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\schemaType.js:1407:9
-    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) 
-Timestamp : 2025/07/03 15:07:37;
-            Level : ERROR ; Message : Admin failed to create new product ;
- Stack :  ValidationError: Product validation failed: product_image: Path `product_image` is required.
-    at Document.invalidate (H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3352:32)
-    at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3113:17
-    at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\schemaType.js:1407:9
-    at process.processTicksAndRejections (node:internal/process/task_queues:77:11) 
-Timestamp : 2025/07/03 15:07:93;
-            Level : ERROR ; Message : Admin failed to create new product ;
- Stack :  ReferenceError: product_image is not defined
-    at exports.addProduct (H:\NTI\project\E-commerce\back-end\controllers\productControllers.js:45:9)
-    at Layer.handleRequest (H:\NTI\project\E-commerce\back-end\node_modules\router\lib\layer.js:152:17)
-    at next (H:\NTI\project\E-commerce\back-end\node_modules\router\lib\route.js:157:13)
-    at multerMiddleware (H:\NTI\project\E-commerce\back-end\node_modules\multer\lib\make-middleware.js:19:41)
-    at Layer.handleRequest (H:\NTI\project\E-commerce\back-end\node_modules\router\lib\layer.js:152:17)
-    at next (H:\NTI\project\E-commerce\back-end\node_modules\router\lib\route.js:157:13)
-    at H:\NTI\project\E-commerce\back-end\middleware\role.middleware.js:6:9
-    at Layer.handleRequest (H:\NTI\project\E-commerce\back-end\node_modules\router\lib\layer.js:152:17)
-    at next (H:\NTI\project\E-commerce\back-end\node_modules\router\lib\route.js:157:13)
-    at exports.authenticate (H:\NTI\project\E-commerce\back-end\middleware\auth.middleware.js:18:9) 
-Timestamp : 2025/07/03 15:07:95;
-            Level : ERROR ; Message : Admin failed to create new product ;
- Stack :  ValidationError: Product validation failed: product_title: Path `product_title` is required.
+ Stack :  ValidationError: Product validation failed: category_name: `meeeeeen` is not a valid enum value for path `category_name`.
     at Document.invalidate (H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3352:32)
     at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\document.js:3113:17
     at H:\NTI\project\E-commerce\back-end\node_modules\mongoose\lib\schemaType.js:1407:9

@@ -1,5 +1,4 @@
 
-
 const Order = require("../models/order.model");
 const Cart = require("../models/cart.model");
 // admin
@@ -16,7 +15,7 @@ exports.getAllOrders = async (req, res) => {
 exports.getOrderById = async (req, res) => {
     try {
         const { id } = req.params;
-        const order = await Order.findById(id).populate("userId", "name email").populate("products.productId", "product_title price");
+        const order = await Order.findById(id).populate("userId", "name email").populate("products.productId", "product_title product_image price");
         if (!order) {
             return res.status(404).json({ error: "Order not found" });
         }
@@ -37,8 +36,8 @@ exports.addOrderToShipping = async (req, res) => {
         if (!order) {
             return res.status(404).json({ error: "Order not found" });
         }
-        if(status === "shipped"){
-            return res.status(400).json({error : "Order is already shipped" })
+        if (status === "shipped") {
+            return res.status(400).json({ error: "Order is already shipped" })
         }
 
         await Order.findByIdAndUpdate(orderId, {
@@ -52,7 +51,7 @@ exports.addOrderToShipping = async (req, res) => {
 }
 exports.updateStatusOrder = async (req, res) => {
     try {
-        const { orderId , status } = req.body;
+        const { orderId, status } = req.body;
         const order = await Order.findById(orderId);
 
         if (!order) {
@@ -61,7 +60,7 @@ exports.updateStatusOrder = async (req, res) => {
 
         const updateStatusOrder = await Order.findByIdAndUpdate(
             orderId,
-            { status},
+            { status },
             { new: true }
         );
 
@@ -91,39 +90,47 @@ exports.updateStatusOrder = async (req, res) => {
 // Users
 
 exports.createOrder = async (req, res) => {
-
     try {
         const userId = req.user._id;
-        const cartItems = await Cart.find({ userId }).populate("productId");
-        // console.log(cartItems)
+        const cartItems = await Cart.find({ userId, isPurchased: false }).populate("productId");
 
         if (cartItems.length === 0) {
             return res.status(400).json({ error: "Cart is empty" });
         }
+
+        const previousOrderCount = await Order.countDocuments({ userId });
         const products = cartItems.map((item) => ({
             productId: item.productId._id,
             product_title: item.productId.product_title,
             product_image: item.productId.product_image,
-            quantity: item.productId.stock || item.quantity || 1,
-            price: item.productId.price || item.price
-        }))
-        // console.log(products)
+            quantity: item.quantity || 1,
+            price: item.productId.price,
+        }));
+
         const newOrder = await Order.create({
             userId,
             products,
+            orderNumber: previousOrderCount + 1,
             status: "pending",
-            shippingData: req.body.shippingData
-        })
-        // console.log(newOrder)
- 
+            shippingData: req.body.shippingData,
+            paymentMethod: req.body.paymentMethod || "Cash",
+        });
+
+        //   await Cart.updateMany(
+        //     { userId, isPurchased: false },
+        //     { $set: { isPurchased: true, purchasedAt: new Date() } }
+        //   );
+
+        await Cart.deleteMany({ userId });
+
         return res.status(201).json({ message: "Order created", order: newOrder });
 
-
     } catch (error) {
-
-        res.status(500).json({ error: "Server error while creating order" });
+        console.error("Create Order Error:", error);
+        return res.status(500).json({ error: "Server error while creating order" });
     }
-}
+};
+
 exports.getMyOrders = async (req, res) => {
     try {
         const userId = req.user._id;

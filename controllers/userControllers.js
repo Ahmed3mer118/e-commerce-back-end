@@ -19,16 +19,22 @@ exports.getUsers = async (req, res) => {
 
 exports.getUsersById = async (req, res) => {
     try {
-        const showData = await Users.fetchUsers()
-        const { id } = req.params
-        const userId = Object.keys(showData).length > 0
-        const filterData = showData.filter(data => data.id == id)
-        if (!userId) {
-            return res.status(400).json({ error: "No data provided." });
-        }
-        return res.status(200).json({ message: "User retrieved successfully.", data: filterData });
+      const id = req.user;
+      const user = await Users.findById(id);
+  
+      if (!user) {
+        return res.status(404).json({ error: "User not found." });
+      }
+  
+      return res.status(200).json({
+        message: "User retrieved successfully.",
+        data: user,
+      });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({ error: "Server error while getting User." });
+      console.error(error);
+      return res.status(500).json({
+        error: "Server error while getting user.",
+      });
     }
-}
+  };
+  
